@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Of Roses - هدايا وبكدجات أفراح</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #c2185b;
+            --primary-dark: #8c0032;
+            --primary-light: #f06292;
+            --secondary-color: #4a148c;
+            --accent-color: #ff80ab;
+            --light-color: #fce4ec;
+            --dark-color: #2c2c2c;
+            --gray-color: #f5f5f5;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #fff;
+            padding-top: 0;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+            margin-bottom: 60px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+            margin: 10px;
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Services Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        /* Catalogue Section */
+        .catalogue-section {
+            background-color: var(--gray-color);
+            padding: 80px 0;
+        }
+        
+        .catalogue-slideshow {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            padding: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--accent-color);
+        }
+        
+        .footer-column p {
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .phone-number {
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        .phone-number:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>House Of Roses</h1>
+            <p>وجهتكم المفضلة للهدايا، بكدجات الأفراح، الإكسسوارات، ومنتجات التجميل. من صواني الخطوبة إلى بوكيهات الورد، نصنع لحظات لا تنسى بأناقة وذوق رفيع.</p>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>خدماتنا</h2>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>هدايا</h3>
+                    <p>هدايا مميزة ومنسقة بدقة لجميع المناسبات</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3>بوكيه ورد</h3>
+                    <p>بوكيهات ورد طبيعي وصناعي لأي مناسبة</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>صواني خطوبة</h3>
+                    <p>صواني خطوبة أنيقة ليومك الخاص</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>إكسسوارات</h3>
+                    <p>إكسسوارات جميلة تكمل إطلالتك</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>بكدجات كتب كتاب</h3>
+                    <p>بكدجات أفراح كاملة لحفل زفاف مميز</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mug-hot"></i>
+                    </div>
+                    <h3>طباعة مجات وكنفاس</h3>
+                    <p>طباعة مخصصة على المجات والكنفاس للهدايا الشخصية</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>مستحضرات تجميل</h3>
+                    <p>منتجات تجميل وعناية بالبشرة عالية الجودة</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>برفانات</h3>
+                    <p>عطور فاخرة للرجال والنساء</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Catalogue Section -->
+    <section class="catalogue-section" id="catalogue">
+        <div class="container">
+            <div class="section-title">
+                <h2>كتالوج المنتجات</h2>
+            </div>
+            
+            <div class="catalogue-slideshow">
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT2Mlhspm24zgDM7mafdNcitQTXrdvvjBVMuK8RygjT2h1zqpvpJBj5i_BSaQyLHWrszjR0zY4zrPKr/pubembed?start=true&loop=true&delayms=3000" frameborder="0" width="100%" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>House Of Roses</h3>
+                    <p>وجهتكم المفضلة للهدايا، بكدجات الأفراح، الإكسسوارات، ومنتجات التجميل. نتميز بصنع لحظات لا تنسى بأناقة وذوق رفيع.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>معلومات الاتصال</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <div class="phone-number" onclick="callPhone('01555686001')">01555686001</div>
+                                <div class="phone-number" onclick="callPhone('01143558400')">01143558400</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <div>الأخصاص - الصف - الجيزة</div>
+                                <div>شارع البسطة بجوار الوحدة المحلية</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>ساعات العمل</h3>
+                    <p>الأحد - الخميس: 9:00 صباحًا - 10:00 مساءً</p>
+                    <p>الجمعة - السبت: 10:00 صباحًا - 11:00 مساءً</p>
+                    <p>نقبل الدفع نقدًا وبالتحويل على انستاباي او فوادفون كاش</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2026 House Of Roses. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Function to initiate phone call
+        function callPhone(phoneNumber) {
+            // Remove any spaces or hyphens from the phone number
+            const cleanNumber = phoneNumber.replace(/\s+/g, '');
+            
+            // For mobile devices, use tel: protocol
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                window.location.href = `tel:${cleanNumber}`;
+            } else {
+                // For desktop, show a message
+                alert(`للاتصال بالرقم: ${phoneNumber}\n\nعلى الهواتف المحمولة، سيتم الاتصال تلقائيًا.`);
+            }
+        }
+        
+        // Add click event listeners to all phone numbers
+        document.querySelectorAll('.phone-number').forEach(phoneElement => {
+            phoneElement.addEventListener('click', function() {
+                const phoneNumber = this.textContent.replace(/\s+/g, '');
+                callPhone(phoneNumber);
+            });
+        });
+    </script>
+</body>
+</html>
